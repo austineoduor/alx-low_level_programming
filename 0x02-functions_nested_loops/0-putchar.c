@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-
+#include "main.c"
 /**
 *main - Entry point
 *
@@ -8,14 +8,13 @@
 */
 int main(void)
 {
-	char hello[] = "_putchar";
+	char hello[] = "_putchar\n";
 	int i = 0;
 
 	while (hello[i])
 	{
-	putchar(hello[i]);
-	i++;
+		_putchar(hello[i]);
+		i++;
 	}
-	putchar('\n');
 	return (0);
 }
