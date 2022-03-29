@@ -1,24 +1,19 @@
-#include "main.h"
+#include <string.h>
 
 /**
- * _strchr -  function that locates a character in a string.
- * @s: characters.
- * @c: character.
- * Return: s.
+ * _strspn - a function ...
+ * @s: the chain
+ * @accept: the chain
+ *
+ * Return: 1 or 0
 */
 
-char *_strchr(char *s, char c)
+unsigned int _strspn(char *s, char *accept)
 {
-	int i;
+	unsigned int i = 0;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
+	while (s[i] && strchr(accept, s[i]))
 		i++;
-		if (s[i] == c)
-		{
-			return (s + i);
-		}
-	}
-	return (0);
+	return (i);
 }
+
