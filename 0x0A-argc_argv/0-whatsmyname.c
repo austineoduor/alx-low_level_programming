@@ -2,11 +2,14 @@
 #include <stdlib.h>
 /**
 *main -entry point
-*Return 0
+*@argc: count number of arguments
+*@argv: value of arguments
+*Return: Always 0 (Success)
 */
 int main(int argc, char *argv[])
 {
-	while(argc--)
+	while
+		(argc--)
 	printf("%s\n", *argv++);
 	return (0);
 }
