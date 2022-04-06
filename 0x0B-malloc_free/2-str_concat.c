@@ -1,55 +1,80 @@
-#include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include<stdlib.h>
+#include<stdio.h>
+
+#include<stdlib.h>
 
 /**
- * argstostr - concatenates all the arguments
- * @ac: input params
- * @av: input params
+* ft_strlen - a function
+* @str: the chaine
+*
+* Return: 1 or 0
+*/
+
+int ft_strlen(char *str)
+{
+	int i = 0;
+
+	while (str[i])
+		i++;
+	return (i);
+}
+
+/**
+* ft_strcpy - a functio
+* @src: the chaine
+*
+* Return: 1 or 0
+*/
+char *ft_strcpy(char *src)
+{
+	char *str = malloc((ft_strlen(src) + 1) * sizeof(char));
+	int i = 0;
+
+	while (src[i])
+	{
+		str[i] = src[i];
+		i++;
+	}
+	return (str);
+}
+
+/**
+ * str_concat - a function ...
+ * @s1: the chaine
+ * @s2: the chaine
  *
- * Return: nothing.
+ * Return: 1 or 0
  */
 
-char *argstostr(int ac, char **av)
+char  *str_concat(char *s1, char *s2)
 {
-	int x, j, v = 0;
-	int len = 1;
-	char *str;
+	char *src;
+	int len1 = 0, i = 0, len2 = 0, j = 0;
 
-	if (ac == 0 || av == NULL)
-	{
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	src = malloc((len1 + len2 + 1) * sizeof(char));
+	if (src == NULL)
 		return (NULL);
-	}
-
-	for (x = 0; x < ac; x++)
 	{
-		for (j = 0; av[x][j] != '\0'; j++)
+		while (s1[i])
 		{
-			len += 1;
+			src[i] = s1[i];
+			i++;
 		}
-		len += 1;
-	}
-	str = malloc(sizeof(char) * len);
 
-	for (x = 0; x < ac; x++)
-	{
-		for (j = 0; av[x][j] != '\0'; j++)
+		while (s2[j])
 		{
-			str[v] = av[x][j];
-			v++;
+			src[i] = s2[j];
+			i++;
+			j++;
 		}
-		str[v] = '\n';
-		v++;
+		src[i] = '\0';
 	}
-	str[v] = '\0';
-
-	if (str != NULL)
-	{
-		return (str);
-	}
-	else
-	{
-		return (NULL);
-	}
+	return (src);
 }
