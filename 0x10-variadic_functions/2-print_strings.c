@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 /**
-*print_numbers - summing function
+*print_strings - printing string function
 *@n :number
 *Return: alwys 0 (Success)
 *@separator : pointer
