@@ -6,22 +6,24 @@
 *Return: alwys 0 (Success)
 *@separator : pointer
 */
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
-	unsigned int num = 0, i;
 	va_list args;
+	unsigned int i;
+	char *num;
 
 	va_start(args, n);
 
 	for (i = 0; i < n; i++)
 	{
-		num = va_arg(args, int);
-		printf("%d", num);
+		num = va_arg(args, char*);
+		if (num != NULL)
+			printf("%s", num);
+		else
+			printf("%p", num);
 		if (separator != NULL && i < n - 1)
-		{
 			printf("%s", separator);
-		}
 	}
-	va_end(args);
 	printf("\n");
+	va_end(args);
 }
