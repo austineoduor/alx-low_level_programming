@@ -1,0 +1,5 @@
+-File 0: function that prints a name.
+-File 1:  function that executes a function given as a parameter on each element of an array.
+-File 2:  function that searches for an integer.
+-File 3:  program that performs simple operations.
+-File 4: program that prints the opcodes of its own main function.
