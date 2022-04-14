@@ -4,6 +4,7 @@
 *print_numbers - summing function
 *@n :number
 *Return: alwys 0 (Success)
+*@separator : pointer
 */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
@@ -16,9 +17,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		num = va_arg(args, int);
 		printf("%d", num);
-		if (separator !=NULL)
+		if (separator != NULL)
 		{
-			printf("%s",separator);
+			printf("%s", separator);
 		}
 	}
 	va_end(args);
