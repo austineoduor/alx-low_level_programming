@@ -1,17 +1,18 @@
-section	.text
+section .data                           	;.data starts here
+	msg db "Hello, Holberton",0xa		;String gets initialized
+	l equ $-msg				;Length Of String
 
-global main:      ;must be declared for linker (ld)
+section .text					;.text starts here
+	global main:				;Moving to main
 
-main:				;tells linker entry point
-	mov	edx,len		;message length
-	mov	ecx,msg		;message to write
-	mov	ebx,1		;file descriptor (stdout)
-	mov	eax,4		;system call number (sys_write)
-	int	0x80		;call kernel
-	mov	eax,1		;system call number (sys_exit)
-	int	0x80		;call kernel
+main:						;main label
+	mov rax,1				;Sys_Write Function
+	mov rdi,1				;Std_Out File Descriptor
+	mov rsi,msg				;Offset of msg
+	mov rdx,l				;Length Of msg
+	syscall					;Call the Kernel
 
-section	.data
-
-msg db 'Hello, Holberton', 0xa	;string to be printed
-len equ $ - msg			;length of the string
+	mov rax,60				;Sys_Exit Function
+	mov rdi,0				;Sucessful Termination
+	syscall					;Call The Kernel
+end:						;end Label
