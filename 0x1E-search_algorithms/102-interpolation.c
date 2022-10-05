@@ -1,13 +1,13 @@
 #include "search_algos.h"
 
 /**
- * interpolation_search - performs jump search
- * @array: the integer array
- * @size: its size
- * @value: value to search for
- *
- * Return: the index found or -1
- */
+*interpolation_search - performs jump search
+*@array: the integer array
+*@size: its size
+*@value: value to search for
+*
+*Return: the index found or -1
+*/
 int interpolation_search(int *array, size_t size, int value)
 {
 	size_t pos = 0, low = 0, high = size - 1;
