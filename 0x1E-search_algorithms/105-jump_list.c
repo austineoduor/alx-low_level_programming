@@ -10,10 +10,7 @@
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t i = 0,
-	j = sqrt(size),
-	k = 0,
-	last_j = 0;
+	size_t i = 0, j = sqrt(size), k = 0, last_j = 0;
 	listint_t *last = list;
 
 	if (!list)
